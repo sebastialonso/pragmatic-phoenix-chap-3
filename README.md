@@ -6,7 +6,7 @@
 
 * Run the new generator
 
-`docker-compose exec web mix phoenix.new new_app`
+`docker-compose run web mix phoenix.new new_app`
 
 * Move the files (in your host system) and delete the empty project folder
 

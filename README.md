@@ -1,42 +1,20 @@
-## Install
+# Rumbl
 
-* Build the image if not done already
+To start your Phoenix app:
 
-`docker-compose up -d`
+  * Install dependencies with `mix deps.get`
+  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
+  * Install Node.js dependencies with `npm install`
+  * Start Phoenix endpoint with `mix phoenix.server`
 
-* Run the new generator
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-`docker-compose run web mix phoenix.new new_app`
+Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
-* Move the files (in your host system) and delete the empty project folder
+## Learn more
 
-`sudo mv app_name/* ./`
-`sudo mv app_name/.gitignore ./`
-`rm -rf app_name`
-
-* Edit database file `config/dev.exs`
-
-In particular change the `hostname` key to the name of the postgres container in `docker-compose.yml`. (by default: `db`)
-
-~~~ elixir
-# config/dev.exs
-# Configure your database
-config :hello_world, HelloWorld.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "app_name_dev",
-  hostname: "db",
-  pool_size: 10
-
-~~~
-
-You may need to change the permissions of the files created by the docker container with `sudo chown -R YOU_USER .`
-
-* Create the db
-
-`docker-compose exec web mix ecto.create`
-
-* Restart the web container
-
-`docker-compose restart web`
+  * Official website: http://www.phoenixframework.org/
+  * Guides: http://phoenixframework.org/docs/overview
+  * Docs: https://hexdocs.pm/phoenix
+  * Mailing list: http://groups.google.com/group/phoenix-talk
+  * Source: https://github.com/phoenixframework/phoenix

@@ -1,12 +1,15 @@
 ## Install
 
 * Build the image if not done already
+
 `docker-compose up -d`
 
 * Run the new generator
+
 `docker-compose exec web mix phoenix.new new_app`
 
 * Move the files (in your host system) and delete the empty project folder
+
 `sudo mv app_name/* ./`
 `sudo mv app_name/.gitignore ./`
 `rm -rf app_name`
@@ -16,7 +19,7 @@
 In particular change the `hostname` key to the name of the postgres container in `docker-compose.yml`. (by default: `db`)
 
 ~~~ elixir
-config/dev.exs
+# config/dev.exs
 # Configure your database
 config :hello_world, HelloWorld.Repo,
   adapter: Ecto.Adapters.Postgres,
